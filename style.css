@@ -1,0 +1,305 @@
+/* Global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+h1{
+    font-size: 2.6rem;
+}
+li,button,label,input,p{
+    font-size: 2rem;
+}
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 2rem;
+    font-weight: normal;
+}
+h4,h5{
+    font-size: 2.8rem; 
+}  
+a{
+    color: white;
+    text-decoration: none;
+    /* means no underline will be present */
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+button{
+    padding: 2rem 6rem;
+    background: #4c6e97;
+    border:none;
+    color: white;
+    font-size: 1.9rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background 0.4s ease-in ;
+     /* we changing only button color, so we write background but for other stuffs, prefer to use "all"*/
+    animation: buttonAnimation 2s infinite alternate;
+}
+button:hover{
+    background-color: #131c27;
+}
+/* Nav section with Hero. */
+.main-head{
+    background:#131c27 ;
+    color: white;
+    min-height: 1rem;
+    padding: 1rem;
+}
+nav{
+    min-height: 8vh;
+    display: flex;
+    margin:auto;
+    width:90%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav ul{
+    display: flex; 
+    /* justify-content: space-evenly; is not working,idky */
+    flex: 1 1 40rem;  
+    flex-wrap: wrap ;
+    padding: 2rem;
+    min-height: 8vh;
+    justify-content: space-around ;
+    align-items: center;
+    list-style: none;
+}
+#logo{
+    flex: 1 1 40rem;  
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+}
+/* nav ul and #logo are the child elements nav(which is the parent element) */
+.hero{
+    min-height: 90vh;
+    background-image:linear-gradient(grey,transparent), url("/Travelly/Travellyimg/landing-page.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+     align-items: center; 
+     justify-content: center; 
+    text-align: center; 
+}
+.hero h3{
+    text-align: center;
+    margin:2rem;
+    
+}
+
+/* LOCATION SECTION */
+
+#loactions{
+    min-height: 100vh;
+    background: linear-gradient(grey,transparent), url("/Travelly/Travellyimg/new-york-page.png");
+    background-size: cover;
+    background-position: center ;
+    
+    display:flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* overflow: hidden; means whatever will leave the page will be hidden.Ex: animationo of the cloud. */
+}
+.locations-head{
+    width: 90%;
+    margin: auto;
+}
+.locations-head h2{
+    padding: 1rem 0rem ;
+    text-decoration: underline;
+    text-decoration-thickness: 0.3rem;
+}
+.locations-head h3{
+    padding: 1rem 0rem ;
+    /* below are use to add gradient to texts, however this is not working in chorme.
+    Will try in Mozilla. */
+    /* background: linear-gradient(grey,#6634);
+    background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.cloud{
+    position: absolute;
+    top:0%;
+    right:0%;
+    height: 70%; 
+}
+.moving-cloud-1{
+    animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+.moving-cloud-2{
+    top:10%;
+    /* to move the image behind we use negative  */
+    z-index: -1;  
+    opacity: 0.5;
+    animation: cloudAnimation 3.5s infinite alternate ease-in-out;
+
+}
+
+@keyframes buttonAnimation {
+    0%{
+        background: #4c6e97;
+    }
+    50%{
+        background: #c38054;
+    }
+    100%{
+        background: #d97777;
+    }
+}
+
+@keyframes cloudAnimation {
+    from{
+        transform: translate(10%,-10%);   
+    }
+    to{
+        transform: translate(0%,0%);
+    }
+}
+/* BENEFITS SECTION */
+.benefits-head{
+    background: #2b3b4e;
+    color: white;
+    padding: 3rem;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.benefits-head h3{
+    padding: 1rem;
+    margin: 2rem 5rem;
+}
+.cards{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    min-height: 70vh;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+
+.card{
+    text-align: center;
+    flex: 1 1 25rem;
+    min-height: 50vh;
+    
+    margin: 2rem 5rem;
+    box-shadow: 0px 10px 10px rgba(150, 144, 135,0.5);   
+    /* x y blur */
+}
+.card h3,p{
+    padding: 4rem;
+    font-size: auto;
+}
+.cards img{
+    max-width: 15%;
+    margin: 1rem;
+    
+}
+.card-icon{
+    background: #9298a7;
+}
+
+.contact{
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(grey,transparent), url("/Travelly/Travellyimg/contact-mountain.png");;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-wrapper{
+    background: rgba(19,28,39,0.8);
+    width: 60%;
+    color:white;
+    border-radius: 20px ;
+}
+.form-head{
+    padding: 2rem;
+    text-align: center;
+}
+.name-form,.email-form{
+    text-align: center;
+    padding: 3rem;
+}
+.form-wrapper label{
+    margin: 0rem 3rem;
+}
+.form-wrapper button{
+    width:100%;
+    padding: 2rem;
+    margin-top: 8rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.form-wrapper input{
+    padding: 1rem 3rem;
+}
+footer{
+    color: white;
+    background: #4f637a;    
+}
+.footer-wrapper{
+    display: flex;
+    /* flex-direction: column;  */
+    margin: auto;
+    padding: 2rem;
+    min-height: 1vh;
+    align-items: center;
+    width: 90%;
+    flex-wrap: wrap;
+}
+footer h5{
+    flex:1 1 40rem;
+}
+footer ul{
+    display: flex;
+    list-style: none;
+    flex:1 1 40rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* MEDIA QUERY */
+@media screen  and (max-width:908px){
+    html{
+        font-size: 45%;
+    }
+    nav{
+        text-align: center;
+    }
+    #logo{
+        text-align: center;
+    }
+    .cloud{
+        height: 40rem;
+        pointer-events: none;
+        /* this helps to "not" to select the image by mistake. */
+    }
+    footer{
+        text-align: center;
+        
+    }
+    footer h5{
+        padding-bottom: 2.1rem;
+    }
+}
